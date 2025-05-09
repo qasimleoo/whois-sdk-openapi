@@ -6,6 +6,7 @@ import pydantic
 import typing_extensions
 from ..core.pydantic_utilities import IS_PYDANTIC_V2, UniversalBaseModel
 from ..core.serialization import FieldMetadata
+from .get_v_10_whois_response_registry_data import GetV10WhoisResponseRegistryData
 from .get_v_10_whois_response_status import GetV10WhoisResponseStatus
 from .get_v_10_whois_response_whois_domains_historical_item import GetV10WhoisResponseWhoisDomainsHistoricalItem
 
@@ -28,7 +29,7 @@ class GetV10WhoisResponse(UniversalBaseModel):
     name_servers: typing.Optional[typing.List[str]] = None
     domain_status: typing.Optional[typing.List[str]] = None
     whois_raw_domain: typing.Optional[str] = None
-    registry_data: typing.Optional[typing.Dict[str, str]] = None
+    registry_data: typing.Optional[GetV10WhoisResponseRegistryData] = None
     raw_response: typing_extensions.Annotated[typing.Optional[str], FieldMetadata(alias="rawResponse")] = None
     whois: typing.Optional[str] = None
     total_records: typing.Optional[str] = None
