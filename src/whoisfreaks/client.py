@@ -110,7 +110,7 @@ class WhoisfreaksApi:
         Parameters
         ----------
         whois : str
-            The type of WHOIS lookup (live)
+            The type of WHOIS lookup (live, historical, reverse)
 
         api_key : str
             Your API key
@@ -712,7 +712,7 @@ class AsyncWhoisfreaksApi:
         Parameters
         ----------
         whois : str
-            The type of WHOIS lookup (live)
+            The type of WHOIS lookup (live, historical, reverse)
 
         api_key : str
             Your API key

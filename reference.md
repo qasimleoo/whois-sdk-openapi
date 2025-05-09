@@ -44,7 +44,7 @@ client.whois_lookups(whois='whois', api_key='apiKey', )
 <dl>
 <dd>
 
-**whois:** `str` — The type of WHOIS lookup (live)
+**whois:** `str` — The type of WHOIS lookup (live, historical, reverse)
     
 </dd>
 </dl>

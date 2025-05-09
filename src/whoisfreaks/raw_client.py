@@ -61,7 +61,7 @@ class RawWhoisfreaksApi:
         Parameters
         ----------
         whois : str
-            The type of WHOIS lookup (live)
+            The type of WHOIS lookup (live, historical, reverse)
 
         api_key : str
             Your API key
@@ -1708,7 +1708,7 @@ class AsyncRawWhoisfreaksApi:
         Parameters
         ----------
         whois : str
-            The type of WHOIS lookup (live)
+            The type of WHOIS lookup (live, historical, reverse)
 
         api_key : str
             Your API key
