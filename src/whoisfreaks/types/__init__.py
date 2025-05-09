@@ -41,6 +41,8 @@ from .get_v_10_ssl_live_response_ssl_certificates_item_public_key import (
 )
 from .get_v_10_ssl_live_response_ssl_certificates_item_subject import GetV10SslLiveResponseSslCertificatesItemSubject
 from .get_v_10_whois_response import GetV10WhoisResponse
+from .get_v_10_whois_response_status import GetV10WhoisResponseStatus
+from .get_v_10_whois_response_whois_domains_historical_item import GetV10WhoisResponseWhoisDomainsHistoricalItem
 from .get_v_20_dns_historical_response import GetV20DnsHistoricalResponse
 from .get_v_20_dns_historical_response_historical_dns_records_item import (
     GetV20DnsHistoricalResponseHistoricalDnsRecordsItem,
@@ -110,6 +112,8 @@ __all__ = [
     "GetV10SslLiveResponseSslCertificatesItemPublicKey",
     "GetV10SslLiveResponseSslCertificatesItemSubject",
     "GetV10WhoisResponse",
+    "GetV10WhoisResponseStatus",
+    "GetV10WhoisResponseWhoisDomainsHistoricalItem",
     "GetV20DnsHistoricalResponse",
     "GetV20DnsHistoricalResponseHistoricalDnsRecordsItem",
     "GetV20DnsHistoricalResponseHistoricalDnsRecordsItemDnsRecordsItem",

@@ -3,22 +3,18 @@
 import typing
 
 import pydantic
-import typing_extensions
 from ..core.pydantic_utilities import IS_PYDANTIC_V2, UniversalBaseModel
-from ..core.serialization import FieldMetadata
-from .get_v_10_whois_response_status import GetV10WhoisResponseStatus
-from .get_v_10_whois_response_whois_domains_historical_item import GetV10WhoisResponseWhoisDomainsHistoricalItem
 
 
-class GetV10WhoisResponse(UniversalBaseModel):
-    status: typing.Optional[GetV10WhoisResponseStatus] = None
+class GetV10WhoisResponseWhoisDomainsHistoricalItem(UniversalBaseModel):
+    num: typing.Optional[int] = None
+    status: typing.Optional[bool] = None
     domain_name: typing.Optional[str] = None
-    whois_server: typing.Optional[str] = None
-    domain_registered: typing.Optional[str] = None
     query_time: typing.Optional[str] = None
+    whois_server: typing.Optional[str] = None
     create_date: typing.Optional[str] = None
-    expiry_date: typing.Optional[str] = None
     update_date: typing.Optional[str] = None
+    expiry_date: typing.Optional[str] = None
     domain_registrar: typing.Optional[typing.Dict[str, str]] = None
     reseller_contact: typing.Optional[typing.Dict[str, str]] = None
     registrant_contact: typing.Optional[typing.Dict[str, str]] = None
@@ -27,15 +23,7 @@ class GetV10WhoisResponse(UniversalBaseModel):
     billing_contact: typing.Optional[typing.Dict[str, str]] = None
     name_servers: typing.Optional[typing.List[str]] = None
     domain_status: typing.Optional[typing.List[str]] = None
-    whois_raw_domain: typing.Optional[str] = None
     registry_data: typing.Optional[typing.Dict[str, str]] = None
-    raw_response: typing_extensions.Annotated[typing.Optional[str], FieldMetadata(alias="rawResponse")] = None
-    whois: typing.Optional[str] = None
-    total_records: typing.Optional[str] = None
-    total_result: typing_extensions.Annotated[typing.Optional[int], FieldMetadata(alias="total_Result")] = None
-    total_pages: typing_extensions.Annotated[typing.Optional[int], FieldMetadata(alias="total_Pages")] = None
-    current_page: typing_extensions.Annotated[typing.Optional[int], FieldMetadata(alias="current_Page")] = None
-    whois_domains_historical: typing.Optional[typing.List[GetV10WhoisResponseWhoisDomainsHistoricalItem]] = None
 
     if IS_PYDANTIC_V2:
         model_config: typing.ClassVar[pydantic.ConfigDict] = pydantic.ConfigDict(extra="allow", frozen=True)  # type: ignore # Pydantic v2

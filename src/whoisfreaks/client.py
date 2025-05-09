@@ -87,17 +87,25 @@ class WhoisfreaksApi:
         """
         return self._raw_client
 
-    def live_whois_lookup(
+    def whois_lookups(
         self,
         *,
         whois: str,
         api_key: str,
-        domain_name: str,
+        domain_name: typing.Optional[str] = None,
+        keyword: typing.Optional[str] = None,
+        email: typing.Optional[str] = None,
+        owner: typing.Optional[str] = None,
+        company: typing.Optional[str] = None,
+        mode: typing.Optional[str] = None,
+        exact: typing.Optional[str] = None,
+        includes: typing.Optional[str] = None,
+        page: typing.Optional[str] = None,
         format: typing.Optional[str] = None,
         request_options: typing.Optional[RequestOptions] = None,
     ) -> GetV10WhoisResponse:
         """
-        Fetch live WHOIS information for a given domain
+        Fetch live and historical WHOIS data for any domain, and perform reverse lookups to find domains associated with a specific registrant, company, email, or keyword. Instantly retrieve current registration details, explore past WHOIS records, or discover all domains linked to a specific registrant, company, email, or keyword.
 
         Parameters
         ----------
@@ -107,8 +115,32 @@ class WhoisfreaksApi:
         api_key : str
             Your API key
 
-        domain_name : str
-            The domain name for WHOIS lookup
+        domain_name : typing.Optional[str]
+            The domain name for Live and Historical WHOIS lookup
+
+        keyword : typing.Optional[str]
+            Keyword to search for in registrant information (optional)
+
+        email : typing.Optional[str]
+            Email to search for (optional)
+
+        owner : typing.Optional[str]
+            Owner to search for (optional)
+
+        company : typing.Optional[str]
+            Company to search for (optional)
+
+        mode : typing.Optional[str]
+            Mode of search (optional)
+
+        exact : typing.Optional[str]
+            Exact match flag (optional)
+
+        includes : typing.Optional[str]
+            Include specific details (optional)
+
+        page : typing.Optional[str]
+            The page number of the reverse records (optional)
 
         format : typing.Optional[str]
             Two formats are available JSON, XML. If you don't specify the 'format' parameter, the default format will be JSON.
@@ -119,16 +151,28 @@ class WhoisfreaksApi:
         Returns
         -------
         GetV10WhoisResponse
-            Successful WHOIS lookup
+            Successful lookup
 
         Examples
         --------
         from whoisfreaks import WhoisfreaksApi
         client = WhoisfreaksApi()
-        client.live_whois_lookup(whois='whois', api_key='apiKey', domain_name='domainName', )
+        client.whois_lookups(whois='whois', api_key='apiKey', )
         """
-        _response = self._raw_client.live_whois_lookup(
-            whois=whois, api_key=api_key, domain_name=domain_name, format=format, request_options=request_options
+        _response = self._raw_client.whois_lookups(
+            whois=whois,
+            api_key=api_key,
+            domain_name=domain_name,
+            keyword=keyword,
+            email=email,
+            owner=owner,
+            company=company,
+            mode=mode,
+            exact=exact,
+            includes=includes,
+            page=page,
+            format=format,
+            request_options=request_options,
         )
         return _response.data
 
@@ -645,17 +689,25 @@ class AsyncWhoisfreaksApi:
         """
         return self._raw_client
 
-    async def live_whois_lookup(
+    async def whois_lookups(
         self,
         *,
         whois: str,
         api_key: str,
-        domain_name: str,
+        domain_name: typing.Optional[str] = None,
+        keyword: typing.Optional[str] = None,
+        email: typing.Optional[str] = None,
+        owner: typing.Optional[str] = None,
+        company: typing.Optional[str] = None,
+        mode: typing.Optional[str] = None,
+        exact: typing.Optional[str] = None,
+        includes: typing.Optional[str] = None,
+        page: typing.Optional[str] = None,
         format: typing.Optional[str] = None,
         request_options: typing.Optional[RequestOptions] = None,
     ) -> GetV10WhoisResponse:
         """
-        Fetch live WHOIS information for a given domain
+        Fetch live and historical WHOIS data for any domain, and perform reverse lookups to find domains associated with a specific registrant, company, email, or keyword. Instantly retrieve current registration details, explore past WHOIS records, or discover all domains linked to a specific registrant, company, email, or keyword.
 
         Parameters
         ----------
@@ -665,8 +717,32 @@ class AsyncWhoisfreaksApi:
         api_key : str
             Your API key
 
-        domain_name : str
-            The domain name for WHOIS lookup
+        domain_name : typing.Optional[str]
+            The domain name for Live and Historical WHOIS lookup
+
+        keyword : typing.Optional[str]
+            Keyword to search for in registrant information (optional)
+
+        email : typing.Optional[str]
+            Email to search for (optional)
+
+        owner : typing.Optional[str]
+            Owner to search for (optional)
+
+        company : typing.Optional[str]
+            Company to search for (optional)
+
+        mode : typing.Optional[str]
+            Mode of search (optional)
+
+        exact : typing.Optional[str]
+            Exact match flag (optional)
+
+        includes : typing.Optional[str]
+            Include specific details (optional)
+
+        page : typing.Optional[str]
+            The page number of the reverse records (optional)
 
         format : typing.Optional[str]
             Two formats are available JSON, XML. If you don't specify the 'format' parameter, the default format will be JSON.
@@ -677,7 +753,7 @@ class AsyncWhoisfreaksApi:
         Returns
         -------
         GetV10WhoisResponse
-            Successful WHOIS lookup
+            Successful lookup
 
         Examples
         --------
@@ -685,11 +761,23 @@ class AsyncWhoisfreaksApi:
         import asyncio
         client = AsyncWhoisfreaksApi()
         async def main() -> None:
-            await client.live_whois_lookup(whois='whois', api_key='apiKey', domain_name='domainName', )
+            await client.whois_lookups(whois='whois', api_key='apiKey', )
         asyncio.run(main())
         """
-        _response = await self._raw_client.live_whois_lookup(
-            whois=whois, api_key=api_key, domain_name=domain_name, format=format, request_options=request_options
+        _response = await self._raw_client.whois_lookups(
+            whois=whois,
+            api_key=api_key,
+            domain_name=domain_name,
+            keyword=keyword,
+            email=email,
+            owner=owner,
+            company=company,
+            mode=mode,
+            exact=exact,
+            includes=includes,
+            page=page,
+            format=format,
+            request_options=request_options,
         )
         return _response.data
 

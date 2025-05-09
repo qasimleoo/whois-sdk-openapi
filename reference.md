@@ -1,5 +1,5 @@
 # Reference
-<details><summary><code>client.<a href="src/whoisfreaks/client.py">live_whois_lookup</a>(...)</code></summary>
+<details><summary><code>client.<a href="src/whoisfreaks/client.py">whois_lookups</a>(...)</code></summary>
 <dl>
 <dd>
 
@@ -11,7 +11,7 @@
 <dl>
 <dd>
 
-Fetch live WHOIS information for a given domain
+Fetch live and historical WHOIS data for any domain, and perform reverse lookups to find domains associated with a specific registrant, company, email, or keyword. Instantly retrieve current registration details, explore past WHOIS records, or discover all domains linked to a specific registrant, company, email, or keyword.
 </dd>
 </dl>
 </dd>
@@ -28,7 +28,7 @@ Fetch live WHOIS information for a given domain
 ```python
 from whoisfreaks import WhoisfreaksApi
 client = WhoisfreaksApi()
-client.live_whois_lookup(whois='whois', api_key='apiKey', domain_name='domainName', )
+client.whois_lookups(whois='whois', api_key='apiKey', )
 
 ```
 </dd>
@@ -60,7 +60,71 @@ client.live_whois_lookup(whois='whois', api_key='apiKey', domain_name='domainNam
 <dl>
 <dd>
 
-**domain_name:** `str` — The domain name for WHOIS lookup
+**domain_name:** `typing.Optional[str]` — The domain name for Live and Historical WHOIS lookup
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**keyword:** `typing.Optional[str]` — Keyword to search for in registrant information (optional)
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**email:** `typing.Optional[str]` — Email to search for (optional)
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**owner:** `typing.Optional[str]` — Owner to search for (optional)
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**company:** `typing.Optional[str]` — Company to search for (optional)
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**mode:** `typing.Optional[str]` — Mode of search (optional)
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**exact:** `typing.Optional[str]` — Exact match flag (optional)
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**includes:** `typing.Optional[str]` — Include specific details (optional)
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**page:** `typing.Optional[str]` — The page number of the reverse records (optional)
     
 </dd>
 </dl>
