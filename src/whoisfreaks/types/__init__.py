@@ -44,6 +44,9 @@ from .get_v_10_whois_response import GetV10WhoisResponse
 from .get_v_10_whois_response_registry_data import GetV10WhoisResponseRegistryData
 from .get_v_10_whois_response_status import GetV10WhoisResponseStatus
 from .get_v_10_whois_response_whois_domains_historical_item import GetV10WhoisResponseWhoisDomainsHistoricalItem
+from .get_v_10_whois_response_whois_domains_historical_item_registry_data import (
+    GetV10WhoisResponseWhoisDomainsHistoricalItemRegistryData,
+)
 from .get_v_20_dns_historical_response import GetV20DnsHistoricalResponse
 from .get_v_20_dns_historical_response_historical_dns_records_item import (
     GetV20DnsHistoricalResponseHistoricalDnsRecordsItem,
@@ -116,6 +119,7 @@ __all__ = [
     "GetV10WhoisResponseRegistryData",
     "GetV10WhoisResponseStatus",
     "GetV10WhoisResponseWhoisDomainsHistoricalItem",
+    "GetV10WhoisResponseWhoisDomainsHistoricalItemRegistryData",
     "GetV20DnsHistoricalResponse",
     "GetV20DnsHistoricalResponseHistoricalDnsRecordsItem",
     "GetV20DnsHistoricalResponseHistoricalDnsRecordsItemDnsRecordsItem",
