@@ -1,9 +1,9 @@
 [project]
-name = "whois-sdk-openapi"
+name = "py-whoisfreaks"
 
 [tool.poetry]
-name = "whois-sdk-openapi"
-version = "0.0.43"
+name = "py-whoisfreaks"
+version = "0.0.41"
 description = ""
 readme = "README.md"
 authors = []
